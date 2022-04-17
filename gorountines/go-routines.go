@@ -24,16 +24,7 @@ func showResponseTime(url string) {
 	fmt.Printf("%s took %v seconds to response!\n", url, elapsed)
 }
 
-func main() {
-	fmt.Println("****************** EXAMPLE OF CONCURREN *******************")
-	// slowFunc()
-	// fmt.Println("I only show after sleep done!")
-
-	// go slowFunc()
-	// fmt.Println("I show immediately!")
-	// time.Sleep(time.Second * 3)
-	// at this point, the program will exit, even there is a Groutine not finish yet.
-
+func handleApiRequest() {
 	fmt.Println("****************** EXAMPLE OF HANDLING API REQUEST *******************")
 	urls := make([]string, 3)
 	urls[0] = "https://www.usa.gov/"
@@ -41,13 +32,29 @@ func main() {
 	urls[2] = "http://www.gouvernement.fr/"
 	for _, url := range urls {
 		// showResponseTime(url)
-
 		// if you using goroutines here, the order of url response may differ with the ordinary array, corresponse to the reponse time of each url
 		go showResponseTime(url)
 	}
 	time.Sleep(time.Second * 5)
 }
 
+func concurrencyDemo() {
+	fmt.Println("****************** EXAMPLE OF CONCURRENCY *******************")
+	// slowFunc()
+	// fmt.Println("I only show after sleep done!")
+
+	// go slowFunc()
+	// fmt.Println("I show immediately!")
+	// time.Sleep(time.Second * 3)
+	// at this point, the function will exit, even there is a Groutine not finish yet.
+}
+
+func main() {
+	// concurrencyDemo()
+	// handleApiRequest()
+}
+
 /**
+	We can make con run conconcurren with gorountines
 	The keywork to using concurrency here is "go", so funny :)))
 **/
