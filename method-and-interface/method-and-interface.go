@@ -21,13 +21,13 @@ type T750 struct {
 	Model string
 }
 
-// this is how youi implement PowerOn() method of Robot interface
+// this is how you implement PowerOn() method of Robot interface
 func (t *T850) PowerOn() error {
 	fmt.Println("Robot type: ", t.Name)
 	return nil
 }
 
-// this is how youi implement PowerOn() method of Robot interface
+// this is how you implement PowerOn() method of Robot interface
 func (t *T750) PowerOn() error {
 	fmt.Println("Robot type: ", t.Model)
 	return nil
