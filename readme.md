@@ -1,3 +1,4 @@
+
 ---
 Go language documents
 Create by: bugsmaker
